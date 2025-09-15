@@ -15,11 +15,7 @@ export async function Header() {
           className="col-span-full row-start-2 md:col-span-1 md:col-start-2 md:row-start-1"
         >
           <ul className="flex flex-wrap items-center justify-center gap-8">
-            {/* {settings.data.navigation.map((item) => (
-              <li key={item.link.text}>
-                <PrismicNextLink field={item.link} className="~text-lg/xl" />
-              </li>
-            ))} */}
+            <li>Test</li>
           </ul>
         </nav>
         <div className="justify-self-end">
