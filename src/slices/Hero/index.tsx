@@ -14,6 +14,7 @@ const DEFAULT_BOLT_COLOR = '#6F6E6A';
 const Hero = () => {
   const [quote, setQuote] = useState<Quote | null>(null);
 
+  
   const deckTextureURL = DEFAULT_DECK_TEXTURE;
   const wheelTextureURL = DEFAULT_WHEEL_TEXTURE;
   const truckColor = DEFAULT_TRUCK_COLOR;
