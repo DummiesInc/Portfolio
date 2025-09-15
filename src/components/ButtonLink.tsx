@@ -16,6 +16,7 @@ interface Props {
   icon?: 'cart' | 'skateboard' | 'plus';
   children?: ReactNode;
   className?: string;
+  href: string;
 }
 
 export function ButtonLink({
@@ -24,6 +25,7 @@ export function ButtonLink({
   icon,
   children,
   className,
+  href,
   ...props
 }: Props) {
   return (
@@ -41,7 +43,7 @@ export function ButtonLink({
         className
       )}
       {...props}
-      href=""
+      href={href}
     >
       {icon ? (
         <>

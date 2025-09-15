@@ -10,11 +10,12 @@ const DEFAULT_DECK_TEXTURE = '/skateboard/Deck.webp';
 const DEFAULT_WHEEL_TEXTURE = '/skateboard/SkateWheel1.png';
 const DEFAULT_TRUCK_COLOR = '#6F6E6A';
 const DEFAULT_BOLT_COLOR = '#6F6E6A';
+import clsx from 'clsx';
+import { ButtonLink } from '@/src/components/ButtonLink';
 
 const Hero = () => {
   const [quote, setQuote] = useState<Quote | null>(null);
 
-  
   const deckTextureURL = DEFAULT_DECK_TEXTURE;
   const wheelTextureURL = DEFAULT_WHEEL_TEXTURE;
   const truckColor = DEFAULT_TRUCK_COLOR;
@@ -34,25 +35,30 @@ const Hero = () => {
       data-slice-variation={'default'}
       className="bg-brand-lime relative h-dvh overflow-hidden text-zinc-800 bg-texture"
     >
-      <div className="absolute inset-0 mx-auto mt-24 grid max-w-6xl grid-rows-[1fr,auto] place-items-end px-6 ~py-10/16">
+      <div className="absolute inset-0 mx-auto grid max-w-6xl grid-rows-[1fr,auto] place-items-end px-6 ~py-10/16">
         <Heading className="relative max-w-2xl place-self-start">
-          <div>
-            <h1>Jun's Portfolio</h1>
+          <div className={'font-sans uppercase'}>
+            <h1>Jun Ou</h1>
+          </div>
+
+          <div className="max-w-[45ch] font-semibold ~text-lg/xl">
+            <p>Fullstack Software Engineer</p>
+            <p className="text-sm">{`On a mission to create better application`}</p>
           </div>
         </Heading>
         <div className="flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
           <div className="max-w-[45ch] font-semibold ~text-lg/xl">
             <p>{quote?.quote}</p>
-            <p>- {quote?.author}</p>
+            <p className="text-center">- {quote?.author}</p>
           </div>
-          {/* <ButtonLink
-            field={slice.primary.button}
+          <ButtonLink
             icon="skateboard"
             size="lg"
-            className="z-20 mt-2 block"
+            className="z-20  block"
+            href={''}
           >
-            {slice.primary.button.text}
-          </ButtonLink> */}
+            {'Customize your board'}
+          </ButtonLink>
         </div>
       </div>
 
