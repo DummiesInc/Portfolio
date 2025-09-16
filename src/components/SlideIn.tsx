@@ -5,9 +5,15 @@ type Props = {
   children: ReactNode;
   delay?: number;
   duration?: number;
+  direction?: 'left' | 'right';
 };
 
-export function SlideIn({ children, delay = 0, duration = 0.6 }: Props) {
+export function SlideIn({
+  children,
+  delay = 0,
+  duration = 0.6,
+  direction = 'right'
+}: Props) {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,7 +23,7 @@ export function SlideIn({ children, delay = 0, duration = 0.6 }: Props) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          element.style.animation = `slide-in ${duration}s ease ${delay}s forwards`;
+          element.style.animation = `slide-in-${direction} ${duration}s ease ${delay}s forwards`;
           observer.unobserve(element);
         }
       },
@@ -27,7 +33,7 @@ export function SlideIn({ children, delay = 0, duration = 0.6 }: Props) {
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [delay, duration]);
+  }, [delay, duration, direction]);
 
   return (
     <div ref={elementRef} className="slide-in-hidden">

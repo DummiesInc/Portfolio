@@ -15,15 +15,18 @@ import { contacts } from '@/src/components/data/contact';
 import { Scribble } from '../Technologies/Scribble';
 import Link from 'next/link';
 import { SkateboardProduct } from '../Technologies/SkateboardProduct';
+import { SlideIn } from '@/src/components/SlideIn';
 
 const generateRandomNum = (numLength: number) => {
   return Math.floor(Math.random() * Math.floor(numLength));
 };
 
 const Hero = () => {
-  const [quote, setQuote] = useState<Quote | null>(
-    quotesData[generateRandomNum(quotesData.length)]
-  );
+  const [quote, setQuote] = useState<Quote | null>(null);
+
+  useEffect(() => {
+    setQuote(quotesData[generateRandomNum(quotesData.length)]);
+  }, []);
 
   const deckTextureURL = DEFAULT_DECK_TEXTURE;
   const wheelTextureURL = DEFAULT_WHEEL_TEXTURE;
@@ -51,14 +54,14 @@ const Hero = () => {
 
           <div className="flex justify-center items-center">
             {contacts.map((item, i) => (
-              <div
-                key={i}
-                className="w-20 h-20 flex justify-center 
+              <SlideIn delay={i - 0.3} key={i}>
+                <div
+                  className="w-20 h-20 flex justify-center 
                 items-center scale-100 text-xl z-[1000]"
-              >
-                <Link
-                  href={item.url}
-                  className="
+                >
+                  <Link
+                    href={item.url}
+                    className="
                     group
                     relative flex justify-center items-center
                     w-[50px] h-[50px]
@@ -68,21 +71,22 @@ const Hero = () => {
                     transition-all duration-300
                     scale-100 hover:scale-150
                   "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={item.svg}
-                    alt=""
-                    width={80}
-                    height={80}
-                    className="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={item.svg}
+                      alt=""
+                      width={80}
+                      height={80}
+                      className="
                           w-7 h-7
                           transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150
                         "
-                  />
-                </Link>
-              </div>
+                    />
+                  </Link>
+                </div>
+              </SlideIn>
             ))}
           </div>
         </Heading>

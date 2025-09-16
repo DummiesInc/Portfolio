@@ -103,9 +103,29 @@ body {
   transform: translateX(-100px);
 }
 
-@keyframes slide-in {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%); /* start from left */
+    opacity: 0;
   }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%); /* start from right */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-hidden {
+  opacity: 0;
 }
