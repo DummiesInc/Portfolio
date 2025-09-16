@@ -55,11 +55,11 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
           )}
         >
           <SlideIn>
-            <Heading size="lg" as="h2">
+            <Heading size="md" as="h2">
               <div
                 className={clsx(
-                  'font-sans uppercase'
-                  // variation === 'default' ? 'ml-10' : 'mr-10'
+                  'font-sans uppercase',
+                  variation === 'default' ? 'ml-10' : 'mr-10'
                 )}
               >
                 <h1>{companyName}</h1>
@@ -68,9 +68,7 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
           </SlideIn>
 
           <SlideIn>
-            <div
-            // className={clsx(variation === 'default' ? 'ml-10' : 'mr-10')}
-            >
+            <div className={clsx(variation === 'default' ? 'ml-10' : 'mr-10')}>
               <p>Professional Experience</p>
               <p>{position}</p>
             </div>
@@ -79,11 +77,10 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
           <SlideIn>
             <p
               className={clsx(
-                'max-w-md text-lg leading-relaxed list-disc'
-                // variation === 'default' ? 'ml-10' : 'mr-10'
+                'max-w-md text-lg leading-relaxed list-disc',
+                variation === 'default' ? 'ml-10' : 'mr-10'
               )}
             >
-              {/* {summary} */}
               {` simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`}
             </p>
           </SlideIn>
@@ -102,7 +99,7 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
           )}
         </div>
 
-        <ParallaxImage companyImage={companyLogo} />
+        <ParallaxImage companyImage={companyLogo} variation={variation} />
       </div>
     </Bounded>
   );

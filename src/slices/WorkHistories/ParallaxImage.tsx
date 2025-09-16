@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from 'react';
 
 type Props = {
   companyImage: string;
+  variation: 'default' | 'imageOnLeft';
   className?: string;
 };
 
@@ -66,7 +67,7 @@ export function ParallaxImage({ companyImage, className }: Props) {
         <Image
           alt="test1"
           src={companyImage}
-          className="w-11/12"
+          className={clsx('w-11/12')}
           width={150}
           height={150}
           style={{
@@ -82,7 +83,7 @@ export function ParallaxImage({ companyImage, className }: Props) {
         <Image
           alt="test2"
           src={'/images/background/brush.png'}
-          className="h-full max-h-[400px] w-auto"
+          className={clsx('h-full max-h-[400px] w-auto')}
           width={400}
           height={400}
         />
