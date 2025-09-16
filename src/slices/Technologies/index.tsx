@@ -11,7 +11,7 @@ const TechnologyGrid = () => {
     <Bounded
       data-slice-type={'hero'}
       data-slice-variation={'default'}
-      className="bg-texture bg-brand-gray"
+      className="bg-texture bg-brand-gray relative overflow-hidden text-zinc-800 bg-texture"
     >
       <SlideIn direction="left">
         <Heading className="text-center ~mb-4/6" as="h2">

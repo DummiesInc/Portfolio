@@ -40,7 +40,7 @@ const Hero = () => {
       className="bg-brand-lime relative h-dvh overflow-hidden text-zinc-800 bg-texture"
     >
       <div className="absolute inset-0 mx-auto grid max-w-6xl grid-rows-[1fr,auto] place-items-end px-6 ~py-10/16">
-        <Heading className="relative place-self-start w-full flex justify-between items-center">
+        {/* <Heading className="relative place-self-start w-full flex justify-between items-center">
           <div>
             <div className={'font-sans uppercase'}>
               <h1>Jun Ou</h1>
@@ -54,10 +54,10 @@ const Hero = () => {
 
           <div className="flex justify-center items-center">
             {contacts.map((item, i) => (
-              <SlideIn delay={i - 0.3} key={i}>
+              <SlideIn delay={i - 0.3} key={i} customClass='slide-in-hidden-right'>
                 <div
                   className="w-20 h-20 flex justify-center 
-                items-center scale-100 text-xl z-[1000]"
+                items-center scale-100 text-xl"
                 >
                   <Link
                     href={item.url}
@@ -89,7 +89,7 @@ const Hero = () => {
               </SlideIn>
             ))}
           </div>
-        </Heading>
+        </Heading> */}
         <div className="flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
           <div className="max-w-[45ch] font-semibold ~text-lg/xl">
             <p>{quote?.quote}</p>

@@ -16,6 +16,7 @@ interface Props {
   icon?: 'cart' | 'skateboard' | 'plus';
   children?: ReactNode;
   className?: string;
+  target?: '_blank' | '_parent' | '_self' | '_top';
   href: string;
 }
 
@@ -26,6 +27,7 @@ export function ButtonLink({
   children,
   className,
   href,
+  target = '_self',
   ...props
 }: Props) {
   return (
@@ -42,9 +44,9 @@ export function ButtonLink({
         color === 'lime' && 'from-brand-lime to-brand-orange text-black',
         className
       )}
+      target={target}
       {...props}
       href={href}
-      onClick={() => console.log('test')}
     >
       {icon ? (
         <>

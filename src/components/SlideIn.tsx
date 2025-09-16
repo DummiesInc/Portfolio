@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import React, { ReactNode, useEffect, useRef } from 'react';
 
 type Props = {
@@ -6,13 +7,15 @@ type Props = {
   delay?: number;
   duration?: number;
   direction?: 'left' | 'right';
+  customClass?: 'slide-in-hidden-left' | 'slide-in-hidden-right';
 };
 
 export function SlideIn({
   children,
   delay = 0,
   duration = 0.6,
-  direction = 'right'
+  direction = 'right',
+  customClass = 'slide-in-hidden-left'
 }: Props) {
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -36,7 +39,7 @@ export function SlideIn({
   }, [delay, duration, direction]);
 
   return (
-    <div ref={elementRef} className="slide-in-hidden">
+    <div ref={elementRef} className={customClass}>
       {children}
     </div>
   );
