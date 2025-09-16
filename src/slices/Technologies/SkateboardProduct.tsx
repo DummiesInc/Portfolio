@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { HorizontalLine, VerticalLine } from '@/src/components/Line';
+import { Scribble } from './Scribble';
 
 async function getDominantColor(url: string) {
   const paletteURL = new URL(url);
@@ -20,6 +21,7 @@ async function getDominantColor(url: string) {
 type Props = {
   svg: any;
   name: string;
+  color: string;
 };
 
 const VERTICAL_LINE_CLASSES =
@@ -28,13 +30,14 @@ const VERTICAL_LINE_CLASSES =
 const HORIZONTAL_LINE_CLASSES =
   '-mx-8 stroke-2 text-stone-300 transition-colors group-hover:text-stone-400';
 
-export async function SkateboardProduct({ svg, name }: Props) {
+export async function SkateboardProduct({ svg, name, color }: Props) {
   return (
     <div className="group relative mx-auto w-full max-w-72 px-8 pt-4 ">
       <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'left-4')} />
       <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'right-4')} />
       <HorizontalLine className={HORIZONTAL_LINE_CLASSES} />
       <div className="-mb-1 overflow-hidden py-4">
+        <Scribble className="absolute inset-0 h-full w-full" color={color} />
         <Image
           src={svg}
           alt=""

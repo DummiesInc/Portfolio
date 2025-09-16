@@ -9,50 +9,70 @@ import tailwind from './technologies/tailwind.svg';
 import typescript from './technologies/typescript.svg';
 import aws from './technologies/aws.svg';
 
+import {
+  blueLogo,
+  redLogo,
+  purpleLogo,
+  yellowLogo,
+  brownLogo,
+  orangeLogo
+} from '@/src/components/data/colors';
+
 export interface TechnologyType {
   name: string;
   svg: any;
+  color: string;
 }
 
 export const technologies: TechnologyType[] = [
   {
     name: 'Typescript',
-    svg: typescript
+    svg: typescript,
+    color: blueLogo
   },
   {
     name: 'React',
-    svg: react
+    svg: react,
+    color: blueLogo
   },
   {
     name: 'Nextjs',
-    svg: nextJS
+    svg: nextJS,
+    color: redLogo
   },
   {
     name: 'Tailwinc CSS',
-    svg: tailwind
+    svg: tailwind,
+    color: blueLogo
   },
   {
     name: 'C#',
-    svg: cSharp
+    svg: cSharp,
+    color: purpleLogo
   },
   {
     name: '.NET',
-    svg: dotNet
+    svg: dotNet,
+    color: yellowLogo
   },
   {
     name: 'Ruby',
-    svg: ruby
+    svg: ruby,
+    color: redLogo
   },
   {
     name: 'SQL Server',
-    svg: sql
+    svg: sql,
+    color: brownLogo
   },
   {
     name: 'PostgresSQL',
-    svg: postgreSQL
+    svg: postgreSQL,
+    color: blueLogo
   },
   {
     name: 'AWS',
-    svg: aws
+    svg: aws,
+    color: orangeLogo
   }
 ];

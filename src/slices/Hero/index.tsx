@@ -12,6 +12,7 @@ const DEFAULT_BOLT_COLOR = '#6F6E6A';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Image from 'next/image';
 import { contacts } from '@/src/components/data/contact';
+import { Scribble } from '../Technologies/Scribble';
 
 const Hero = () => {
   const [quote, setQuote] = useState<Quote | null>(null);

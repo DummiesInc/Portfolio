@@ -1,0 +1,10 @@
+export const brownLogo = '#8d6e63';
+export const redLogo = '#ff3a30';
+export const pinkLogo = '#ff2d54';
+export const purpleLogo = '#5856d6';
+export const blueLogo = '#007bff';
+export const crystalLogo = '#00c8be';
+export const greenLogo = '#4cd963';
+export const yellowLogo = '#ffcc00';
+export const orangeLogo = '#ff9500';
+export const blackLogo = '#000000';
