@@ -44,6 +44,7 @@ export function ButtonLink({
       )}
       {...props}
       href={href}
+      onClick={() => console.log('test')}
     >
       {icon ? (
         <>

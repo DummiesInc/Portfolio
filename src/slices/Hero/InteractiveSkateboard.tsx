@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense, FC } from 'react';
-import * as THREE from 'three';
 import SkateBoardScene from './SkateBoardScene';
 
 export const INITIAL_CAMERA_POSITION = [1.5, 1, 1.4] as const;

@@ -13,22 +13,22 @@ import { ButtonLink } from '@/src/components/ButtonLink';
 import Image from 'next/image';
 import { contacts } from '@/src/components/data/contact';
 import { Scribble } from '../Technologies/Scribble';
+import Link from 'next/link';
+import { SkateboardProduct } from '../Technologies/SkateboardProduct';
+
+const generateRandomNum = (numLength: number) => {
+  return Math.floor(Math.random() * Math.floor(numLength));
+};
 
 const Hero = () => {
-  const [quote, setQuote] = useState<Quote | null>(null);
+  const [quote, setQuote] = useState<Quote | null>(
+    quotesData[generateRandomNum(quotesData.length)]
+  );
 
   const deckTextureURL = DEFAULT_DECK_TEXTURE;
   const wheelTextureURL = DEFAULT_WHEEL_TEXTURE;
   const truckColor = DEFAULT_TRUCK_COLOR;
   const boltColor = DEFAULT_BOLT_COLOR;
-
-  const generateRandomNum = (numLength: number) => {
-    return Math.floor(Math.random() * Math.floor(numLength));
-  };
-
-  useEffect(() => {
-    setQuote(quotesData[generateRandomNum(quotesData.length)]);
-  }, []);
 
   return (
     <Bounded
@@ -51,12 +51,13 @@ const Hero = () => {
 
           <div className="flex justify-center items-center">
             {contacts.map((item, i) => (
-              <li
+              <div
                 key={i}
-                className="w-20 h-20 flex justify-center items-center scale-100 text-xl"
+                className="w-20 h-20 flex justify-center 
+                items-center scale-100 text-xl z-[1000]"
               >
-                <a
-                  href="#"
+                <Link
+                  href={item.url}
                   className="
                     group
                     relative flex justify-center items-center
@@ -65,8 +66,10 @@ const Hero = () => {
                     border-2 border-[var(--color-grey)]
                     rounded-full
                     transition-all duration-300
-                    scale-100 hover:scale-120
+                    scale-100 hover:scale-150
                   "
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src={item.svg}
@@ -75,14 +78,11 @@ const Hero = () => {
                     height={80}
                     className="
                           w-7 h-7
-                          fill-[var(--color-grey)]
-                          scale-110
-                          transition-all duration-300
-                          group-hover:scale-100
+                          transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150
                         "
                   />
-                </a>
-              </li>
+                </Link>
+              </div>
             ))}
           </div>
         </Heading>
@@ -97,7 +97,7 @@ const Hero = () => {
             className="z-20  block"
             href={''}
           >
-            {'Customize your board'}
+            {'Customize the board'}
           </ButtonLink>
         </div>
       </div>

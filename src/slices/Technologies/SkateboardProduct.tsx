@@ -6,18 +6,6 @@ import { ButtonLink } from '@/src/components/ButtonLink';
 import { HorizontalLine, VerticalLine } from '@/src/components/Line';
 import { Scribble } from './Scribble';
 
-async function getDominantColor(url: string) {
-  const paletteURL = new URL(url);
-  paletteURL.searchParams.set('palette', 'json');
-
-  const res = await fetch(paletteURL);
-  const json = await res.json();
-
-  return (
-    json.dominant_colors.vibrant?.hex || json.dominant_colors.vibrant_light?.hex
-  );
-}
-
 type Props = {
   svg: any;
   name: string;

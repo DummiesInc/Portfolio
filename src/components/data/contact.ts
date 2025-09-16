@@ -12,16 +12,16 @@ export const contacts: Contact[] = [
   {
     name: 'LinkedIn',
     svg: linkedIn,
-    url: ''
+    url: 'https://www.linkedin.com/in/junfeng-ou-a359b41a4/'
   },
   {
     name: 'Github',
     svg: github,
-    url: ''
+    url: 'https://github.com/Junfengou'
   },
   {
     name: 'Email',
     svg: email,
-    url: ''
+    url: 'mailto:juntheworkingman@gmail.com'
   }
 ];
