@@ -37,14 +37,14 @@ const Hero = () => {
             <p>{quote?.quote}</p>
             <p className="text-center">- {quote?.author}</p>
           </div>
-          <ButtonLink
+          {/* <ButtonLink
             icon="skateboard"
             size="lg"
             className="z-20  block"
             href={''}
           >
             {'Customize the board'}
-          </ButtonLink>
+          </ButtonLink> */}
         </div>
       </div>
 

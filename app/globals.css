@@ -13,6 +13,7 @@
 body {
   margin: 0;
   font-family: 'GeistMono', sans-serif;
+  max-width: 100%;
   overflow-x: hidden
 }
 
@@ -106,7 +107,7 @@ body {
 
 .slide-in-hidden-left {
     opacity: 0;
-    transform: translateX(100px);
+    /* transform: translateX(100px); */
 }
 
 .slide-in-hidden-right {

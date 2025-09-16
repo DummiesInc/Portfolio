@@ -10,27 +10,15 @@ export default function Home() {
       <Header />
       <Hero />
       <TechnologyGrid />
-      <WorkHistories
-        workHistory={workHistories[0]}
-        index={0}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[1]}
-        index={1}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[2]}
-        index={2}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[3]}
-        index={3}
-        size={workHistories.length}
-      />
-      <TechnologyGrid />
+      {workHistories?.map((item, i) => (
+        <WorkHistories
+          key={i}
+          workHistory={item}
+          index={i}
+          size={workHistories.length}
+        />
+      ))}
+      {/* <TechnologyGrid /> */}
     </div>
   );
 }

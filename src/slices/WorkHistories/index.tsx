@@ -30,8 +30,8 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
     // techStack,
     // employmentEnd,
     theme,
-    variation
-    // summary
+    variation,
+    summary
   } = workHistory;
 
   return (
@@ -54,48 +54,44 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
             variation === 'imageOnLeft' && 'md:order-2'
           )}
         >
-          <SlideIn>
-            <Heading size="md" as="h2">
-              <div
-                className={clsx(
-                  'font-sans uppercase',
-                  variation === 'default' ? 'ml-10' : 'mr-10'
-                )}
-              >
-                <h1>{companyName}</h1>
-              </div>
-            </Heading>
-          </SlideIn>
-
-          <SlideIn>
-            <div className={clsx(variation === 'default' ? 'ml-10' : 'mr-10')}>
-              <p>Professional Experience</p>
-              <p>{position}</p>
-            </div>
-          </SlideIn>
-
-          <SlideIn>
-            <p
+          <Heading size="sm" as="h2">
+            <div
               className={clsx(
-                'max-w-md text-lg leading-relaxed list-disc',
-                variation === 'default' ? 'ml-10' : 'mr-10'
+                'font-sans uppercase',
+                variation === 'default' ? 'ml-5' : ''
               )}
             >
-              {` simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`}
-            </p>
-          </SlideIn>
+              <h1>{companyName}</h1>
+            </div>
+          </Heading>
+
+          <div className={clsx(variation === 'default' ? 'ml-5' : '')}>
+            <p>Professional Experience</p>
+            <p>{position}</p>
+          </div>
+
+          <p
+            className={clsx(
+              'text-lg leading-relaxed list-disc text-left',
+              variation === 'default' ? 'ml-3' : ''
+            )}
+            style={{
+              fontSize: 12
+            }}
+          >
+            {summary}
+            {/* {` simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`} */}
+          </p>
 
           {companySite !== undefined && (
-            <SlideIn direction="right" customClass="slide-in-hidden-left">
-              <ButtonLink
-                href={companySite ?? ''}
-                target="_blank"
-                color={theme === 'Lime' ? 'orange' : 'lime'}
-                className={clsx(variation === 'default' ? 'ml-12' : 'mr-10')}
-              >
-                {'Company Link'}
-              </ButtonLink>
-            </SlideIn>
+            <ButtonLink
+              href={companySite ?? ''}
+              target="_blank"
+              color={theme === 'Lime' ? 'orange' : 'lime'}
+              className={clsx(variation === 'default' ? 'ml-12' : 'mr-10')}
+            >
+              {'Company Link'}
+            </ButtonLink>
           )}
         </div>
 

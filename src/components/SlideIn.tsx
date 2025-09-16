@@ -6,7 +6,7 @@ type Props = {
   delay?: number;
   duration?: number;
   direction?: 'left' | 'right';
-  customClass?: 'slide-in-hidden-left' | 'slide-in-hidden-right';
+  customClass?: 'slide-in-hidden-left' | 'slide-in-hidden-right' | undefined;
 };
 
 export function SlideIn({
@@ -14,7 +14,7 @@ export function SlideIn({
   delay = 0,
   duration = 0.6,
   direction = 'right',
-  customClass = 'slide-in-hidden-left'
+  customClass
 }: Props) {
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -38,7 +38,11 @@ export function SlideIn({
   }, [delay, duration, direction]);
 
   return (
-    <div ref={elementRef} className={customClass}>
+    <div
+      ref={elementRef}
+      // className={!!customClass ? customClass : ''}
+      className="slide-in-hidden"
+    >
       {children}
     </div>
   );
