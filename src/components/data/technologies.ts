@@ -20,7 +20,7 @@ import {
 
 export interface TechnologyType {
   name: string;
-  svg: any;
+  svg: string;
   color: string;
 }
 

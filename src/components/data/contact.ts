@@ -4,7 +4,7 @@ import github from './contacts/github.svg';
 
 export interface Contact {
   name: string;
-  svg: any;
+  svg: string;
   url: string;
 }
 

@@ -10,26 +10,33 @@ export default function Home() {
       <Header />
       <Hero />
       <TechnologyGrid />
-      <WorkHistories
-        workHistory={workHistories[0]}
-        index={0}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[1]}
-        index={1}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[2]}
-        index={2}
-        size={workHistories.length}
-      />
-      <WorkHistories
-        workHistory={workHistories[3]}
-        index={3}
-        size={workHistories.length}
-      />
+      <div
+        style={{
+          minHeight: '100vh'
+        }}
+      >
+        <WorkHistories
+          workHistory={workHistories[0]}
+          index={0}
+          size={workHistories.length}
+        />
+        <WorkHistories
+          workHistory={workHistories[1]}
+          index={1}
+          size={workHistories.length}
+        />
+        <WorkHistories
+          workHistory={workHistories[2]}
+          index={2}
+          size={workHistories.length}
+        />
+        <WorkHistories
+          workHistory={workHistories[3]}
+          index={3}
+          size={workHistories.length}
+        />
+      </div>
+      <TechnologyGrid />
     </div>
   );
 }

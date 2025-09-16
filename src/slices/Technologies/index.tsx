@@ -3,7 +3,6 @@ import { technologies } from '@/src/components/data/technologies';
 import { Heading } from '@/src/components/Heading';
 import { SlideIn } from '@/src/components/SlideIn';
 import React from 'react';
-import Image from 'next/image';
 import { SkateboardProduct } from './SkateboardProduct';
 
 const TechnologyGrid = () => {
@@ -22,7 +21,7 @@ const TechnologyGrid = () => {
       </SlideIn>
       <SlideIn direction="left">
         <div className="text-center ~mb-6/10">
-          <p>Technologies I've worked with...</p>
+          <p>{`Technologies I've worked with...`}</p>
         </div>
       </SlideIn>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">

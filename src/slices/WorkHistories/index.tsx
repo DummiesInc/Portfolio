@@ -1,12 +1,10 @@
-'use client';
-
 import { Bounded } from '@/src/components/Bounded';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { WorkHistoryType } from '@/src/components/data/workHistories';
 import { Heading } from '@/src/components/Heading';
 import { SlideIn } from '@/src/components/SlideIn';
 import clsx from 'clsx';
-import React, { FC } from 'react';
+import React from 'react';
 import { ParallaxImage } from './ParallaxImage';
 
 interface WorkHistory {
@@ -21,19 +19,19 @@ declare module 'react' {
   }
 }
 
-const WorkHistories = ({ workHistory, index, size }: WorkHistory) => {
+const WorkHistories = ({ workHistory, index }: WorkHistory) => {
   const {
     companyName,
     companySite,
     companyLogo,
-    employmentStart,
+    // employmentStart,
     position,
-    responsibilities,
-    techStack,
-    employmentEnd,
+    // responsibilities,
+    // techStack,
+    // employmentEnd,
     theme,
-    variation,
-    summary
+    variation
+    // summary
   } = workHistory;
 
   return (
@@ -47,7 +45,7 @@ const WorkHistories = ({ workHistory, index, size }: WorkHistory) => {
         theme === 'Navy' && 'bg-texture bg-brand-navy text-white',
         theme === 'Lime' && 'bg-texture bg-brand-lime'
       )}
-      style={{ '--index': index <= size ? index : 10 }}
+      style={{ '--index': index }}
     >
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24">
         <div
@@ -60,8 +58,8 @@ const WorkHistories = ({ workHistory, index, size }: WorkHistory) => {
             <Heading size="lg" as="h2">
               <div
                 className={clsx(
-                  'font-sans uppercase',
-                  variation === 'default' ? 'ml-10' : 'mr-10'
+                  'font-sans uppercase'
+                  // variation === 'default' ? 'ml-10' : 'mr-10'
                 )}
               >
                 <h1>{companyName}</h1>
@@ -70,7 +68,9 @@ const WorkHistories = ({ workHistory, index, size }: WorkHistory) => {
           </SlideIn>
 
           <SlideIn>
-            <div className={clsx(variation === 'default' ? 'ml-10' : 'mr-10')}>
+            <div
+            // className={clsx(variation === 'default' ? 'ml-10' : 'mr-10')}
+            >
               <p>Professional Experience</p>
               <p>{position}</p>
             </div>
@@ -79,11 +79,12 @@ const WorkHistories = ({ workHistory, index, size }: WorkHistory) => {
           <SlideIn>
             <p
               className={clsx(
-                'max-w-md text-lg leading-relaxed list-disc',
-                variation === 'default' ? 'ml-10' : 'mr-10'
+                'max-w-md text-lg leading-relaxed list-disc'
+                // variation === 'default' ? 'ml-10' : 'mr-10'
               )}
             >
-              {summary}
+              {/* {summary} */}
+              {` simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`}
             </p>
           </SlideIn>
 

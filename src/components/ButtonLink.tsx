@@ -4,12 +4,6 @@ import clsx from 'clsx';
 import { ReactNode } from 'react';
 import Link from 'next/link';
 
-// export type ButtonProps = PrismicNextLinkProps & {
-//   color?: "orange" | "purple" | "lime";
-//   size?: "sm" | "md" | "lg";
-//   icon?: "cart" | "skateboard" | "plus";
-// };
-
 interface Props {
   color?: 'orange' | 'purple' | 'lime';
   size?: 'sm' | 'md' | 'lg';

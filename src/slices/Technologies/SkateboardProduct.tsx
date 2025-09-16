@@ -1,13 +1,10 @@
-import { FaStar } from 'react-icons/fa6';
-
 import clsx from 'clsx';
 import Image from 'next/image';
-import { ButtonLink } from '@/src/components/ButtonLink';
 import { HorizontalLine, VerticalLine } from '@/src/components/Line';
 import { Scribble } from './Scribble';
 
 type Props = {
-  svg: any;
+  svg: string;
   name: string;
   color: string;
 };
