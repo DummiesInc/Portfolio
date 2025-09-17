@@ -19,8 +19,8 @@ type Props = {
   deckTextureURLs: string[];
 };
 
-const DEFAULT_WHEEL_TEXTURE = "/images/decks/OniMask.png";
-const DEFAULT_DECK_TEXTURE = "/images/decks/wheel-cream.png";
+const DEFAULT_WHEEL_TEXTURE = "/images/decks/green-and-navy.png";
+const DEFAULT_DECK_TEXTURE = "/images/decks/wheel-green.png";
 const DEFAULT_TRUCK_COLOR = "#6F6E6A";
 const DEFAULT_BOLT_COLOR = "#6F6E6A";
 const ENVIRONMENT_COLOR = "#3B3A3A";

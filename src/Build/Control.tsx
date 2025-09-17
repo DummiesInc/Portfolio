@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useCustomizerControls } from "@/app/build/context";
 import { WheelType, DeckType, MetalType } from "@/app/build/customize/data";
 import { Heading } from "../components/Heading";
+import useIsMobile from "../hooks/useIsMobile";
 
 interface Props {
     wheels:WheelType[]
@@ -131,7 +132,7 @@ function Options({ title, selectedName, children }: OptionsProps) {
         </p>
       </div>
       <div 
-      className="grid w-full grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4"
+        className="flex self-center gap-3"
         style={{
             marginTop: 10
         }}
@@ -176,7 +177,7 @@ function Option({
                 return selectedWheel?.uid ?? '';
         }
     }
-  
+      const isMobile = useIsMobile();
   return (
     <div>
       <button
@@ -190,8 +191,8 @@ function Option({
             className="h-full w-full rounded-full"
             style={{ 
                 backgroundColor: colorField ?? undefined,
-                height: 40,
-                width: 40
+                height: isMobile ? 22 : 40,
+                width: isMobile ? 22 : 40
              }}
           />
 
