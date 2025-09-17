@@ -8,7 +8,6 @@ const DEFAULT_DECK_TEXTURE = '/skateboard/Deck.webp';
 const DEFAULT_WHEEL_TEXTURE = '/skateboard/SkateWheel1.png';
 const DEFAULT_TRUCK_COLOR = '#6F6E6A';
 const DEFAULT_BOLT_COLOR = '#6F6E6A';
-import { ButtonLink } from '@/src/components/ButtonLink';
 const generateRandomNum = (numLength: number) => {
   return Math.floor(Math.random() * Math.floor(numLength));
 };

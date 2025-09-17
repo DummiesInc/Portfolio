@@ -13,8 +13,7 @@ export function SlideIn({
   children,
   delay = 0,
   duration = 0.6,
-  direction = 'right',
-  customClass
+  direction = 'right'
 }: Props) {
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -38,11 +37,7 @@ export function SlideIn({
   }, [delay, duration, direction]);
 
   return (
-    <div
-      ref={elementRef}
-      // className={!!customClass ? customClass : ''}
-      className="slide-in-hidden"
-    >
+    <div ref={elementRef} className="slide-in-hidden">
       {children}
     </div>
   );

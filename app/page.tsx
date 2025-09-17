@@ -4,7 +4,6 @@ import TechnologyGrid from '@/src/slices/Technologies';
 import WorkHistories from '@/src/slices/WorkHistories';
 import { workHistories } from '@/src/components/data/workHistories';
 import Timeline from '@/src/slices/Timeline';
-import Footer from '@/src/components/Footer';
 
 export default function Home() {
   return (

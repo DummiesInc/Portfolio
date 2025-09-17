@@ -91,7 +91,10 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
 
           <div className="grid w-full grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-7 gap-4">
             {techStack?.map((tech, techIndex) => (
-              <div className="group flex flex-col justify-center self-center ">
+              <div
+                className="group flex flex-col justify-center self-center "
+                key={techIndex}
+              >
                 <div className="bg-texture bg-brand-gray rounded-md w-14 flex justify-center self-center p-2">
                   <Image
                     alt={``}
