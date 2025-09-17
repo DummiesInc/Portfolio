@@ -1,11 +1,13 @@
+'use client';
+
 import { Bounded } from '@/src/components/Bounded';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import { WorkHistoryType } from '@/src/components/data/workHistories';
 import { Heading } from '@/src/components/Heading';
-import { SlideIn } from '@/src/components/SlideIn';
 import clsx from 'clsx';
 import React from 'react';
 import { ParallaxImage } from './ParallaxImage';
+import Image from 'next/image';
 
 interface WorkHistory {
   workHistory: WorkHistoryType;
@@ -24,11 +26,8 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
     companyName,
     companySite,
     companyLogo,
-    // employmentStart,
     position,
-    // responsibilities,
-    // techStack,
-    // employmentEnd,
+    techStack,
     theme,
     variation,
     summary
@@ -39,7 +38,7 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
       data-slice-type={'workHistories'}
       data-slice-variation={'default'}
       className={clsx(
-        'sticky top-[calc(var(--index)*2rem)]',
+        'sticky top-[calc(var(--index)*2rem)] min-h-full',
         theme === 'Blue' && 'bg-texture bg-brand-blue text-white',
         theme === 'Orange' && 'bg-texture bg-brand-orange text-white',
         theme === 'Navy' && 'bg-texture bg-brand-navy text-white',
@@ -72,15 +71,11 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
 
           <p
             className={clsx(
-              'text-lg leading-relaxed list-disc text-left',
+              'text-sm leading-relaxed list-disc text-left md:text-md',
               variation === 'default' ? 'ml-3' : ''
             )}
-            style={{
-              fontSize: 12
-            }}
           >
             {summary}
-            {/* {` simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book`} */}
           </p>
 
           {companySite !== undefined && (
@@ -93,6 +88,25 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
               {'Company Link'}
             </ButtonLink>
           )}
+
+          <div className="grid w-full grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-7 gap-4">
+            {techStack?.map((tech, techIndex) => (
+              <div className="group flex flex-col justify-center self-center ">
+                <div className="bg-texture bg-brand-gray rounded-md w-14 flex justify-center self-center p-2">
+                  <Image
+                    alt={``}
+                    src={tech.svg}
+                    width={40}
+                    height={40}
+                    className="min-w-10 min-h-10 transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150"
+                  />
+                </div>
+                <p className="text-xs mt-2  flex justify-center font-light">
+                  {tech.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <ParallaxImage companyImage={companyLogo} variation={variation} />

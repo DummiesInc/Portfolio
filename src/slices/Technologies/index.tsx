@@ -26,7 +26,7 @@ const TechnologyGrid = () => {
       </SlideIn>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {technologies.map((item, i) => (
-          <SlideIn key={i} direction="right" delay={i % 2}>
+          <SlideIn key={i} direction="right" delay={i - i * 0.8}>
             <SkateboardProduct
               svg={item.svg}
               name={item.name}

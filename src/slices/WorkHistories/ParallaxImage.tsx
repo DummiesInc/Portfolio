@@ -65,7 +65,7 @@ export function ParallaxImage({ companyImage, className }: Props) {
         className="col-start-1 row-start-1 transition-transform z-[100]"
       >
         <Image
-          alt="test1"
+          alt="company-image"
           src={companyImage}
           className={clsx('w-11/12')}
           width={150}
@@ -81,7 +81,7 @@ export function ParallaxImage({ companyImage, className }: Props) {
         className="col-start-1 row-start-1 transition-transform h-full w-full place-items-center"
       >
         <Image
-          alt="test2"
+          alt="brush-image"
           src={'/images/background/brush.png'}
           className={clsx('h-full max-h-[400px] w-auto')}
           width={400}

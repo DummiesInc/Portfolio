@@ -16,6 +16,11 @@ import vesta from './companies/vesta.svg';
 import uno from './companies/uno.svg';
 import onestaff from './companies/onestaff.svg';
 
+interface TechStack {
+  name: string;
+  svg: string;
+}
+
 export interface WorkHistoryType {
   companyName: string;
   companySite?: string | null;
@@ -24,7 +29,7 @@ export interface WorkHistoryType {
   employmentStart: string;
   employmentEnd?: string | null;
   responsibilities: string[];
-  techStack: string[];
+  techStack: TechStack[];
   summary?: string;
   theme: 'Blue' | 'Orange' | 'Navy' | 'Lime';
   variation: 'default' | 'imageOnLeft';
@@ -53,7 +58,36 @@ export const workHistories: WorkHistoryType[] = [
     ],
     summary:
       'Collaborated with developers, designers, and product managers to define product scope, user flows, and design patterns, while modernizing legacy products to improve performance, user experience, and workflows. Migrated and reimagined features with updated UI/UX, built core functionality including custom PDF generation and merging, and ensured accurate legacy data mapping in coordination with database administrators. Delivered feature demos to stakeholders, supported QA with complex debugging, and leveraged AWS tools like Grafana and CloudWatch to monitor and resolve production issues in real time. Actively participated in code reviews, tracked progress in Jira for agile planning, and initiated a Blazor-based application that received stakeholder approval and was greenlit as a standalone product.',
-    techStack: [typescript, react, nextJS, cSharp, dotNet, sql, aws],
+    techStack: [
+      {
+        name: 'Typescript',
+        svg: typescript
+      },
+      {
+        name: 'React',
+        svg: react
+      },
+      {
+        name: 'NextJS',
+        svg: nextJS
+      },
+      {
+        name: 'C#',
+        svg: cSharp
+      },
+      {
+        name: '.NET',
+        svg: dotNet
+      },
+      {
+        name: 'SQLServer',
+        svg: sql
+      },
+      {
+        name: 'AWS',
+        svg: aws
+      }
+    ],
     theme: 'Blue',
     variation: 'default'
   },
@@ -85,7 +119,28 @@ export const workHistories: WorkHistoryType[] = [
       'Participated in code deployment and production release',
       'Participated in weekly developer show and share to learn from other developers'
     ],
-    techStack: [typescript, react, cSharp, dotNet, sql],
+    techStack: [
+      {
+        name: 'Typescript',
+        svg: typescript
+      },
+      {
+        name: 'React',
+        svg: react
+      },
+      {
+        name: 'C#',
+        svg: cSharp
+      },
+      {
+        name: '.NET',
+        svg: dotNet
+      },
+      {
+        name: 'SQLServer',
+        svg: sql
+      }
+    ],
     summary:
       'Collaborated across squads to plan and implement new features while engaging in code reviews and discussions that encouraged knowledge sharing and continuous improvement. Delivered impactful functionality such as a Keyword Detection system to flag inappropriate survey responses and a new survey creation experience that empowered admins with greater flexibility. Leveraged design patterns like Repository, Mediator, and MVC, along with Entity Framework and SQL, to build robust, high-performing products. Supported production stability by working with customer-facing teams to resolve issues, assisting QA with testing, refactoring code for performance, and using tools like New Relic for error tracking. Maintained progress in Asana, actively participated in sprint ceremonies, contributed to deployments and releases, and shared learnings in weekly developer sessions.',
     theme: 'Orange',
@@ -108,7 +163,28 @@ export const workHistories: WorkHistoryType[] = [
       'Search and filter content within the application',
       'Integrate Google event schema and Sitemap for better SEO'
     ],
-    techStack: [typescript, react, graphql, ruby, postgreSQL],
+    techStack: [
+      {
+        name: 'Typescript',
+        svg: typescript
+      },
+      {
+        name: 'React',
+        svg: react
+      },
+      {
+        name: 'GraphQL',
+        svg: graphql
+      },
+      {
+        name: 'Rails',
+        svg: ruby
+      },
+      {
+        name: 'PostgreSQL',
+        svg: postgreSQL
+      }
+    ],
     summary:
       'Fullstack developer leveraging Ruby on Rails and React Native to build and enhance user-focused applications. Redesigned and implemented UI features to improve user experience, integrated map navigation for seamless event discovery, and added search and filtering capabilities for easier content access. Implemented analytics to track user behavior and highlight popular features, along with Firebase dynamic links and calendar integration to improve engagement. Additionally, optimized SEO by integrating Google event schema and sitemaps for greater visibility.',
     theme: 'Lime',
@@ -129,7 +205,20 @@ export const workHistories: WorkHistoryType[] = [
     ],
     summary:
       'Initiated and developed a research project for the University of Nebraska Medical Center, collaborating with fellow students to build a full-stack application. Utilized frontend technologies such as Vue and Nuxt to deliver a polished and functional user interface.',
-    techStack: [typescript, vue, nuxt],
+    techStack: [
+      {
+        name: 'Typescript',
+        svg: typescript
+      },
+      {
+        name: 'Vue',
+        svg: vue
+      },
+      {
+        name: 'NuxtJS',
+        svg: nuxt
+      }
+    ],
     theme: 'Navy',
     variation: 'imageOnLeft'
   }
