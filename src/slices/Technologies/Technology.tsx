@@ -15,7 +15,7 @@ const VERTICAL_LINE_CLASSES =
 const HORIZONTAL_LINE_CLASSES =
   '-mx-8 stroke-2 text-stone-300 transition-colors group-hover:text-stone-400';
 
-export async function SkateboardProduct({ svg, name, color }: Props) {
+export async function Technology({ svg, name, color }: Props) {
   return (
     <div className="group relative mx-auto w-full max-w-72 px-8 pt-4 ">
       <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'left-4')} />

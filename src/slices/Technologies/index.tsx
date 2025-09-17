@@ -3,7 +3,7 @@ import { technologies } from '@/src/components/data/technologies';
 import { Heading } from '@/src/components/Heading';
 import { SlideIn } from '@/src/components/SlideIn';
 import React from 'react';
-import { SkateboardProduct } from './SkateboardProduct';
+import { Technology } from './Technology';
 
 const TechnologyGrid = () => {
   return (
@@ -27,11 +27,7 @@ const TechnologyGrid = () => {
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {technologies.map((item, i) => (
           <SlideIn key={i} direction="right" delay={i - i * 0.8}>
-            <SkateboardProduct
-              svg={item.svg}
-              name={item.name}
-              color={item.color}
-            />
+            <Technology svg={item.svg} name={item.name} color={item.color} />
           </SlideIn>
         ))}
       </div>

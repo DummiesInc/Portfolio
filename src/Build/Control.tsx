@@ -35,7 +35,7 @@ export default function Controls({ wheels, decks, metals, className }: Props) {
     selectedWheel,
   } = useCustomizerControls();
   return (
-    <div className={clsx("flex flex-col gap-6", className)}>
+    <div className={clsx("w-full", className)}>
       <Options title="Deck" selectedName={selectedDeck?.uid}>
         {decks.map((deck) => (
           <Option
@@ -130,11 +130,12 @@ function Options({ title, selectedName, children }: OptionsProps) {
           <span className="ml-3">{formattedName}</span>
         </p>
       </div>
-      <ul className="mb-1 flex flex-wrap gap-2"
+      <div 
+      className="grid w-full grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4"
         style={{
             marginTop: 10
         }}
-      >{children}</ul>
+      >{children}</div>
     </div>
   );
 }
@@ -177,7 +178,7 @@ function Option({
     }
   
   return (
-    <li>
+    <div>
       <button
         className={clsx(
           "size-10 cursor-pointer rounded-full bg-black p-0.5 outline-2 outline-white",
@@ -195,6 +196,6 @@ function Option({
           />
 
       </button>
-    </li>
+    </div>
   );
 }

@@ -8,6 +8,8 @@ import clsx from 'clsx';
 import React from 'react';
 import { ParallaxImage } from './ParallaxImage';
 import Image from 'next/image';
+import ShowMoreText from 'react-show-more-text';
+import useIsMobile from '@/src/hooks/useIsMobile';
 
 interface WorkHistory {
   workHistory: WorkHistoryType;
@@ -32,6 +34,8 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
     variation,
     summary
   } = workHistory;
+
+  const isMobile = useIsMobile();
 
   return (
     <Bounded
@@ -69,14 +73,20 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
             <p>{position}</p>
           </div>
 
-          <p
+          <ShowMoreText
+            lines={3}
+            more="Read more"
+            less="Read less"
             className={clsx(
               'text-sm leading-relaxed list-disc text-left md:text-md',
               variation === 'default' ? 'ml-3' : ''
             )}
+            anchorClass="show-more"
+            expanded={false}
+            width={500}
           >
             {summary}
-          </p>
+          </ShowMoreText>
 
           {companySite !== undefined && (
             <ButtonLink
@@ -111,8 +121,11 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
             ))}
           </div>
         </div>
-
-        <ParallaxImage companyImage={companyLogo} variation={variation} />
+        {isMobile ? (
+          <></>
+        ) : (
+          <ParallaxImage companyImage={companyLogo} variation={variation} />
+        )}
       </div>
     </Bounded>
   );

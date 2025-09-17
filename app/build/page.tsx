@@ -72,7 +72,7 @@ const Page = () => {
             metals={metals}
             className="mb-6"
           />
-          <ButtonLink href="/" color="lime" icon="plus">
+          <ButtonLink href="/" color="lime" icon="plus" className='mt-2'>
             Back to home screen
           </ButtonLink>
         </div>
