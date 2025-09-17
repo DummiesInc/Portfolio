@@ -424,10 +424,10 @@ export const customizeSettings: CustomiseSettingType = {
       color: "#EEEEEE",
       uid: "silver"
     },
-    {
-      color: "#E84118",
-      uid: "red"
-    },
+    // {
+    //   color: "#E84118",
+    //   uid: "red"
+    // },
     {
       color: "#068BD3",
       uid: "blue"
@@ -440,14 +440,14 @@ export const customizeSettings: CustomiseSettingType = {
       color: "#F1C40F",
       uid: "yellow"
     },
-    {
-      color: "#8E44AD",
-      uid: "purple"
-    },
-    {
-      color: "#BA3763",
-      uid: "raspberry"
-    },
+    // {
+    //   color: "#8E44AD",
+    //   uid: "purple"
+    // },
+    // {
+    //   color: "#BA3763",
+    //   uid: "raspberry"
+    // },
     // {
     //   color: "#F1396E",
     //   uid: "pink"

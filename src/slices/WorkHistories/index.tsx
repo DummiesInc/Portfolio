@@ -81,21 +81,12 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
             text={summary ?? ''}
           />
 
-          {/* <p
-            className={clsx(
-              'text-sm leading-relaxed list-disc text-left md:text-md',
-              variation === 'default' ? 'ml-3' : ''
-            )}
-          >
-            {summary}
-          </p> */}
-
           {companySite !== undefined && (
             <ButtonLink
               href={companySite ?? ''}
               target="_blank"
               color={theme === 'Lime' ? 'orange' : 'lime'}
-              className={clsx(variation === 'default' ? 'ml-12' : 'mr-10')}
+              className={clsx(variation === 'default' ? 'ml-5' : 'mr-10')}
             >
               {'Company Link'}
             </ButtonLink>
@@ -116,7 +107,7 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
                     className="min-w-10 min-h-10 transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150"
                   />
                 </div>
-                <p className="text-xs mt-2  flex justify-center font-light">
+                <p className="text-xs mt-2 flex justify-center font-mono">
                   {tech.name}
                 </p>
               </div>

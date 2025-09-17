@@ -5,8 +5,10 @@ import { Heading } from '@/src/components/Heading';
 import { SlideIn } from '@/src/components/SlideIn';
 import React from 'react';
 import { Technology } from './Technology';
+import useIsMobile from '@/src/hooks/useIsMobile';
 
 const TechnologyGrid = () => {
+  const isMobile = useIsMobile();
   return (
     <Bounded
       data-slice-type={'hero'}
@@ -26,11 +28,18 @@ const TechnologyGrid = () => {
         </div>
       </SlideIn>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {technologies.map((item, i) => (
-          <SlideIn key={i} direction="right" delay={i - i * 0.8}>
-            <Technology svg={item.svg} name={item.name} color={item.color} />
-          </SlideIn>
-        ))}
+        {technologies.map((item, i) => {
+          const desktopDelay = i - i * 0.8;
+          return (
+            <SlideIn
+              key={i}
+              direction="right"
+              delay={!isMobile ? desktopDelay : 0}
+            >
+              <Technology svg={item.svg} name={item.name} color={item.color} />
+            </SlideIn>
+          );
+        })}
       </div>
     </Bounded>
   );

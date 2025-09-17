@@ -10,6 +10,7 @@ import Loading from '@/src/Build/Loading';
 
 export default function Home() {
   const { progress } = useProgress();
+  const displayProgress = Math.max(progress, 100);
   return (
     <div>
       <Header />
@@ -25,7 +26,7 @@ export default function Home() {
       ))}
       <Timeline />
 
-      {progress >= 100 ? <></> : <Loading />}
+      {displayProgress >= 100 ? <></> : <Loading />}
     </div>
   );
 }

@@ -8,9 +8,6 @@ import { Heading } from '@/src/components/Heading';
 import { ButtonLink } from '@/src/components/ButtonLink';
 import Loading from '@/src/Build/Loading';
 import { useProgress } from '@react-three/drei';
-
-import Link from 'next/link';
-import { Logo } from '@/src/components/Logo';
 import Control from '@/src/Build/Control';
 
 
@@ -19,6 +16,7 @@ const Page = () => {
   const { wheels, decks, metals } = customizeSettings;
 
   const { progress } = useProgress();
+  const displayProgress = Math.max(progress, 100);
 
   const defaultWheel =  wheels[0];
   const defaultDeck = decks[0];
@@ -31,9 +29,7 @@ const Page = () => {
     .map((texture) => texture.texture.url)
 
   return (
-    <div 
-      // className="flex min-h-screen flex-col lg:flex-row"
-      >
+    <div>
       <CustomizerControlsProvider
         defaultWheel={defaultWheel}
         defaultDeck={defaultDeck}
@@ -44,8 +40,6 @@ const Page = () => {
           className="relative aspect-square shrink-0 bg-[#3a414a] lg:aspect-auto lg:grow"
           >
           <div 
-            // className="absolute inset-0"
-          // Remove this later?
             style={{
               height: '50vh'
             }}
@@ -78,7 +72,7 @@ const Page = () => {
         </div>
       </CustomizerControlsProvider>
       {
-        progress >= 100 ? <></> : <Loading />
+        displayProgress >= 100 ? <></> : <Loading />
       }
     </div>
   )
