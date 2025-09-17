@@ -13,6 +13,7 @@ interface CustomizeInfo {
         zoom: number,
         background: string
     }
+    color?: string
 }
 
 export interface WheelType {
@@ -47,14 +48,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-cream.png",
+        url: "/images/wheels/wheel-cream.png",
         id: "Z1Nbs5bqstJ98LiD",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#DEB887",
       },
       uid: "cream"
     },
@@ -66,14 +68,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-black.png",
+        url: "/images/wheels/wheel-black.png",
         id: "Z1NbuJbqstJ98LiL",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#333333"
       },
       uid: "black"
     },
@@ -85,14 +88,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-navy.png",
+        url: "/images/wheels/wheel-navy.png",
         id: "Z1NbupbqstJ98LiO",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#34495E"
       },
       uid: "navy"
     },
@@ -104,14 +108,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-blue.png",
+        url: "/images/wheels/wheel-blue.png",
         id: "Z1NbtpbqstJ98LiI",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#068BD3"
       },
       uid: "blue"
     },
@@ -123,14 +128,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-yellow.png",
+        url: "/images/wheels/wheel-yellow.png",
         id: "Z1NbtJbqstJ98LiE",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },      
+        color: "#F1C40F"
       },
       uid: "yellow"
     },
@@ -142,17 +148,19 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-red.png",
+        url: "/images/wheels/wheel-red.png",
         id: "Z1NbuZbqstJ98LiM",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#E84118"
       },
       uid: "red"
     },
+
     {
       texture: {
         dimensions: {
@@ -161,33 +169,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-lime.png",
-        id: "Z1NbtZbqstJ98LiG",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "lime"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 1025,
-          height: 1025
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/wheel-purple.png",
+        url: "/images/wheels/wheel-purple.png",
         id: "Z1Nbt5bqstJ98LiJ",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#8E44AD",
       },
       uid: "purple"
     },
@@ -199,14 +189,15 @@ export const customizeSettings: CustomiseSettingType = {
         },
         alt: null,
         copyright: null,
-        url: "/images/decks/wheel-pink.png",
+        url: "/images/wheels/wheel-pink.png",
         id: "Z1Nbu5bqstJ98LiP",
         edit: {
           x: 0,
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#F1396E"
       },
       uid: "pink"
     }
@@ -227,9 +218,11 @@ export const customizeSettings: CustomiseSettingType = {
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+        color: "#E84118",
       },
-      uid: "oni-mask"
+      // uid: "oni-mask"
+      uid: 'red'
     },
     {
       texture: {
@@ -246,29 +239,12 @@ export const customizeSettings: CustomiseSettingType = {
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+                color: "#333333",
       },
-      uid: "grid-streaks"
+      // uid: "grid-streaks"
+      uid: 'black'
     },
-    // {
-    //   texture: {
-    //     dimensions: {
-    //       width: 2056,
-    //       height: 4096
-    //     },
-    //     alt: null,
-    //     copyright: null,
-    //     url: "/images/decks/gra",
-    //     id: "Z1Nbp5bqstJ98Lhu",
-    //     edit: {
-    //       x: 0,
-    //       y: 0,
-    //       zoom: 1,
-    //       background: "transparent"
-    //     }
-    //   },
-    //   uid: "branches"
-    // },
     {
       texture: {
         dimensions: {
@@ -284,9 +260,12 @@ export const customizeSettings: CustomiseSettingType = {
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
+        },
+      color: "#EEEEEE",
+
       },
-      uid: "thank-you"
+      // uid: "thank-you"
+      uid: 'white'
     },
     {
       texture: {
@@ -303,124 +282,126 @@ export const customizeSettings: CustomiseSettingType = {
           y: 0,
           zoom: 1,
           background: "transparent"
-        }
-      },
-      uid: "pink-swirl"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
         },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/green-and-navy.png",
-        id: "Z1NbsZbqstJ98LiA",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
+        color: "#F1396E",
       },
-      uid: "green-and-navy"
+      // uid: "pink-swirl"
+      uid: 'pink'
     },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/black-and-yellow.png",
-        id: "Z1NbsJbqstJ98Lh9",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "black-and-yellow"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/yellow-and-black.png",
-        id: "Z1Nbr5bqstJ98Lh6",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "yellow-and-black"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/red-and-black.png",
-        id: "Z1NbrpbqstJ98Lh4",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "red-and-black"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/red-and-white.png",
-        id: "Z1NbrZbqstJ98Lh3",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "red-and-white"
-    },
-    {
-      texture: {
-        dimensions: {
-          width: 2056,
-          height: 4096
-        },
-        alt: null,
-        copyright: null,
-        url: "/images/decks/gray-and-black.png",
-        id: "Z1NbspbqstJ98LiB",
-        edit: {
-          x: 0,
-          y: 0,
-          zoom: 1,
-          background: "transparent"
-        }
-      },
-      uid: "gray-and-black"
-    }
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/green-and-navy.png",
+    //     id: "Z1NbsZbqstJ98LiA",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "green-and-navy"
+    // },
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/black-and-yellow.png",
+    //     id: "Z1NbsJbqstJ98Lh9",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "black-and-yellow"
+    // },
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/yellow-and-black.png",
+    //     id: "Z1Nbr5bqstJ98Lh6",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "yellow-and-black"
+    // },
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/red-and-black.png",
+    //     id: "Z1NbrpbqstJ98Lh4",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "red-and-black"
+    // },
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/red-and-white.png",
+    //     id: "Z1NbrZbqstJ98Lh3",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "red-and-white"
+    // },
+    // {
+    //   texture: {
+    //     dimensions: {
+    //       width: 2056,
+    //       height: 4096
+    //     },
+    //     alt: null,
+    //     copyright: null,
+    //     url: "/images/decks/gray-and-black.png",
+    //     id: "Z1NbspbqstJ98LiB",
+    //     edit: {
+    //       x: 0,
+    //       y: 0,
+    //       zoom: 1,
+    //       background: "transparent"
+    //     }
+    //   },
+    //   uid: "gray-and-black"
+    // }
   ],
   metals: [
     {
@@ -467,9 +448,9 @@ export const customizeSettings: CustomiseSettingType = {
       color: "#BA3763",
       uid: "raspberry"
     },
-    {
-      color: "#F1396E",
-      uid: "pink"
-    }
+    // {
+    //   color: "#F1396E",
+    //   uid: "pink"
+    // }
   ]
 }

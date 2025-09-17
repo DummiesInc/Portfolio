@@ -4,6 +4,7 @@ import { Bounded } from '@/src/components/Bounded';
 import React, { useEffect, useState } from 'react';
 import { Quote, quotesData } from '../../components/data/quotes';
 import InteractiveSkateboard from './InteractiveSkateboard';
+import { ButtonLink } from '@/src/components/ButtonLink';
 const DEFAULT_DECK_TEXTURE = '/skateboard/Deck.webp';
 const DEFAULT_WHEEL_TEXTURE = '/skateboard/SkateWheel1.png';
 const DEFAULT_TRUCK_COLOR = '#6F6E6A';
@@ -36,14 +37,14 @@ const Hero = () => {
             <p>{quote?.quote}</p>
             <p className="text-center">- {quote?.author}</p>
           </div>
-          {/* <ButtonLink
+          <ButtonLink
             icon="skateboard"
             size="lg"
             className="z-20  block"
-            href={''}
+            href={'/build'}
           >
             {'Customize the board'}
-          </ButtonLink> */}
+          </ButtonLink>
         </div>
       </div>
 
