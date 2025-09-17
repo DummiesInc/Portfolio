@@ -1,3 +1,4 @@
+'use client';
 import { Bounded } from '@/src/components/Bounded';
 import { technologies } from '@/src/components/data/technologies';
 import { Heading } from '@/src/components/Heading';

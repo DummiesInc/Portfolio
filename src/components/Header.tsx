@@ -1,12 +1,13 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
 import { Heading } from './Heading';
 import { contacts } from '@/src/components/data/contact';
 import Image from 'next/image';
 
-export async function Header() {
+export function Header() {
   return (
-    <header className="header absolute left-0 right-0 top-0 z-50 ~h-32/48 ~px-4/6 ~py-4/6 hd:h-32">
+    <div className="header absolute left-0 right-0 top-0 z-50 ~h-32/48 ~px-4/6 ~py-4/6 hd:h-32">
       <div className="mx-auto grid">
         <Heading className="relative place-self-start w-full flex justify-between items-center">
           <div>
@@ -58,6 +59,6 @@ export async function Header() {
           ))}
         </div>
       </div>
-    </header>
+    </div>
   );
 }
