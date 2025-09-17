@@ -11,6 +11,7 @@ import {
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Skateboard } from "../slices/Hero/Skateboard";
+import { skateboardEnum } from "./Control";
 
 
 type Props = {
@@ -33,10 +34,20 @@ const Preview = ({
     const { selectedWheel, selectedBolt, selectedDeck, selectedTruck } =
       useCustomizerControls();
 
-  const wheelTexureURL = selectedWheel?.texture?.url ?? DEFAULT_WHEEL_TEXTURE;
-  const deckTexureURL = selectedDeck?.texture?.url ?? DEFAULT_DECK_TEXTURE;
-  const truckColor = selectedTruck?.color ?? DEFAULT_TRUCK_COLOR;
-  const boltColor = selectedBolt?.color ?? DEFAULT_BOLT_COLOR;
+  const deckTexureURL = (typeof window !== "undefined" && localStorage.getItem(skateboardEnum.deck)) ? 
+  localStorage.getItem(skateboardEnum.deck) ?? '': DEFAULT_DECK_TEXTURE;
+
+  const wheelTexureURL = (typeof window !== "undefined" && localStorage.getItem(skateboardEnum.wheels)) ?
+  localStorage.getItem(skateboardEnum.wheels) ?? '' 
+  : DEFAULT_WHEEL_TEXTURE;
+  
+  const truckColor = (typeof window !== "undefined" && localStorage.getItem(skateboardEnum.trucks)) ?
+  localStorage.getItem(skateboardEnum.trucks) ?? ''
+  : DEFAULT_TRUCK_COLOR;
+  
+  const boltColor = (typeof window !== "undefined" && localStorage.getItem(skateboardEnum.bolts)) ?
+  localStorage.getItem(skateboardEnum.bolts) ?? ''
+  : DEFAULT_BOLT_COLOR;
 
   function setCameraControls(target: THREE.Vector3, pos: THREE.Vector3) {
     if (!cameraControls.current) return;

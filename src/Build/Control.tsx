@@ -16,6 +16,13 @@ interface Props {
     className?: string;
 }
 
+export enum skateboardEnum {
+    deck = 'deck',
+    bolts = 'bolts',
+    trucks = 'trucks',
+    wheels = 'wheels'
+}
+
 export default function Controls({ wheels, decks, metals, className }: Props) {
   const {
     setBolt,
@@ -34,7 +41,11 @@ export default function Controls({ wheels, decks, metals, className }: Props) {
           <Option
             key={deck.uid}
             colorField={deck.texture?.color ?? ''}
-            onClick={() => setDeck(deck)}
+            onClick={() => {
+                setDeck(deck)
+                localStorage.setItem(skateboardEnum.deck, deck.texture.url);
+
+            }}
             uid={deck.uid}
             type="deck"
           >
@@ -47,7 +58,10 @@ export default function Controls({ wheels, decks, metals, className }: Props) {
           <Option
             key={wheel.uid}
             colorField={wheel.texture?.color ?? ''}
-            onClick={() => setWheel(wheel)}
+            onClick={() => {
+                setWheel(wheel)
+                localStorage.setItem(skateboardEnum.wheels, wheel.texture.url);
+            }}
             uid={wheel.uid}
             type="wheel"
           >
@@ -60,7 +74,10 @@ export default function Controls({ wheels, decks, metals, className }: Props) {
           <Option
             key={metal.uid}
             colorField={metal.color}
-            onClick={() => setTruck(metal)}
+            onClick={() => {
+                setTruck(metal)
+                localStorage.setItem(skateboardEnum.trucks, metal.color);
+            }}
             uid={metal.uid}
             type="truck"
           >
@@ -75,6 +92,7 @@ export default function Controls({ wheels, decks, metals, className }: Props) {
             colorField={metal.color}
             onClick={() => {
                 setBolt(metal)
+                localStorage.setItem(skateboardEnum.bolts, metal.color);
             }}
             uid={metal.uid}
             type="bolt"
@@ -176,7 +194,6 @@ function Option({
              }}
           />
 
-        {/* <span className="sr-only">{children}</span> */}
       </button>
     </li>
   );

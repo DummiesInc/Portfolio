@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Quote, quotesData } from '../../components/data/quotes';
 import InteractiveSkateboard from './InteractiveSkateboard';
 import { ButtonLink } from '@/src/components/ButtonLink';
+import { skateboardEnum } from '@/src/Build/Control';
 const DEFAULT_DECK_TEXTURE = '/skateboard/Deck.webp';
 const DEFAULT_WHEEL_TEXTURE = '/skateboard/SkateWheel1.png';
 const DEFAULT_TRUCK_COLOR = '#6F6E6A';
@@ -20,10 +21,25 @@ const Hero = () => {
     setQuote(quotesData[generateRandomNum(quotesData.length)]);
   }, []);
 
-  const deckTextureURL = DEFAULT_DECK_TEXTURE;
-  const wheelTextureURL = DEFAULT_WHEEL_TEXTURE;
-  const truckColor = DEFAULT_TRUCK_COLOR;
-  const boltColor = DEFAULT_BOLT_COLOR;
+  const deckTextureURL =
+    typeof window !== 'undefined' && localStorage.getItem(skateboardEnum.deck)
+      ? (localStorage.getItem(skateboardEnum.deck) ?? '')
+      : DEFAULT_DECK_TEXTURE;
+
+  const wheelTextureURL =
+    typeof window !== 'undefined' && localStorage.getItem(skateboardEnum.wheels)
+      ? (localStorage.getItem(skateboardEnum.wheels) ?? '')
+      : DEFAULT_WHEEL_TEXTURE;
+
+  const truckColor =
+    typeof window !== 'undefined' && localStorage.getItem(skateboardEnum.trucks)
+      ? (localStorage.getItem(skateboardEnum.trucks) ?? '')
+      : DEFAULT_TRUCK_COLOR;
+
+  const boltColor =
+    typeof window !== 'undefined' && localStorage.getItem(skateboardEnum.bolts)
+      ? (localStorage.getItem(skateboardEnum.bolts) ?? '')
+      : DEFAULT_BOLT_COLOR;
 
   return (
     <Bounded
