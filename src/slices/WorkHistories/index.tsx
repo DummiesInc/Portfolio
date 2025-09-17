@@ -9,6 +9,7 @@ import React from 'react';
 import { ParallaxImage } from './ParallaxImage';
 import Image from 'next/image';
 import useIsMobile from '@/src/hooks/useIsMobile';
+import ExpandableText from '@/src/components/ExpandableText';
 
 interface WorkHistory {
   workHistory: WorkHistoryType;
@@ -72,14 +73,22 @@ const WorkHistories = ({ workHistory, index }: WorkHistory) => {
             <p>{position}</p>
           </div>
 
-          <p
+          <ExpandableText
+            className={clsx(
+              'text-sm leading-relaxed list-disc text-left md:text-md',
+              variation === 'default' ? 'ml-3' : ''
+            )}
+            text={summary ?? ''}
+          />
+
+          {/* <p
             className={clsx(
               'text-sm leading-relaxed list-disc text-left md:text-md',
               variation === 'default' ? 'ml-3' : ''
             )}
           >
             {summary}
-          </p>
+          </p> */}
 
           {companySite !== undefined && (
             <ButtonLink
